@@ -1,0 +1,58 @@
+<div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">股票信息</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form [formGroup]="formGroup" class="form-horizontal" novalidate>
+      <div class="box-body">
+        <div class="form-group" [class.has-error]="stockNameError()">
+          <label for="name" class="col-sm-2 control-label">股票名称</label>
+          <div class="col-sm-6">
+            <input formControlName="stockName" type="text" class="form-control" id="name" placeholder="股票名称">
+          </div>
+          <span class="help-block" [class.hidden]="!stockNameError()">请输入股票名称</span>
+        </div>
+        <div class="form-group" [class.has-error]="stockPriceError()">
+          <label for="price" class="col-sm-2 control-label">股票价格</label>
+          <div class="col-sm-6">
+            <input formControlName="stockPrice" type="number" class="form-control" id="price" placeholder="股票价格">
+          </div>
+          <span class="help-block" [class.hidden]="!stockPriceError()">请输入股票价格</span>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">股票星级</label>
+          <div class="col-sm-10" style="margin-top:7px;">
+            <app-rating-star [(rating)]="stock.rating" [readOnly]="false"></app-rating-star>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">股票描述</label>
+          <div class="col-sm-10">
+            <textarea formControlName="stockDesc" class="form-control" rows="5"></textarea>
+          </div>
+        </div>
+        <div formArrayName="stockCategories" class="form-group" [class.has-error]="stockCategoriesError()">
+          <label class="col-sm-2 control-label">股票类型</label>
+          <div class="col-sm-8">
+              <div class="row">
+                <div class="col-sm-2" *ngFor="let category of categories; let i = index;">
+                  <div class="checkbox">
+                    <label>
+                      <input formControlName={{i}} type="checkbox">{{category}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+            <span class="help-block" [class.hidden]="!stockCategoriesError()">请至少选择一个股票类型</span>
+          </div>
+        </div>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">
+        <button (click)="cancel()" type="submit" class="btn btn-default">取消</button>
+        <button (click)="save()" type="submit" class="btn btn-info pull-right" [disabled]="!formGroup.valid">保存</button>
+      </div>
+      <!-- /.box-footer -->
+    </form>
+  </div>

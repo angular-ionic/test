@@ -1,0 +1,19 @@
+
+<!-- 管道: 日期 -->
+<p style="color:red;">
+    今天日期是: {{today | date: 'yyyy-MM-dd HH:mm:ss' | uppercase}}
+</p>
+<!-- 管道: 钱 -->
+<p style="color:cyan;">
+    价格: {{price | number: '.0-2'}}
+</p>
+<!-- 管道: 自定义 -->
+<p style="color:chocolate;">
+    乘法: {{origionNumber | multiply: '2.2'}}
+</p>
+
+<!-- 响应式 -->
+<input [formControl]="searchInput">
+
+<ng-content selecte=".dashboard"></ng-content>
+
