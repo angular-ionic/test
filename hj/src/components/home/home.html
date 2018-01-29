@@ -1,0 +1,52 @@
+<ion-grid class="floatMenu" margin-bottom>
+  <ion-row>
+    <ion-col col-4 text-center>
+      <div (click)="presentQuestionPage()">
+        <ion-icon name="create"></ion-icon>
+        <span>提问</span>
+      </div>
+    </ion-col>
+    <ion-col col-4 text-center>
+      <div>
+        <span float-left>|</span>
+        <ion-icon name="albums"></ion-icon>
+        <span>回答</span>
+        <span float-right>|</span>
+      </div>
+    </ion-col>
+    <ion-col col-4 text-center>
+      <div>
+        <ion-icon name="share-alt"></ion-icon>
+        <span>分享</span></div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<div *ngFor="let feed of feeds" (click)="pushQuestionDetailPage(feed.IdentityId)">
+<ion-card>
+  <ion-card-header no-padding>
+    <ion-list>
+      <ion-item>
+        <ion-avatar item-start><img src="{{feed.HeadFace}}" alt="图片请求错误"></ion-avatar>
+        <p style="line-height: 30px">
+          {{feed.UserNickName}}回答了这个问题
+          <ion-icon ion-button clear name="more" float-end style="color: #999; font-size: large;"></ion-icon>
+        </p>
+      </ion-item>
+    </ion-list>
+  </ion-card-header>
+  <ion-card-content>
+    <h2>{{feed.ContentTitle}}</h2>
+    <p>{{feed.Content}}</p>
+  </ion-card-content>
+  <ion-note>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-8> 100&nbsp;赞同&nbsp;&nbsp;.&nbsp;&nbsp;20&nbsp;评论&nbsp;&nbsp;.&nbsp;&nbsp;关注问题</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-note>
+</ion-card>
+</div>
+
+

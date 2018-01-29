@@ -1,0 +1,23 @@
+<ion-card>
+  <ion-card-content>
+    {{questionInfo?.Content}}
+    <p>{{questionInfo?.LikeCount}}&nbsp;个关注&nbsp;&nbsp;&nbsp;{{questionInfo?.CommentCount}}个回答</p>
+    <div float-end>
+    <button ion-button small><ion-icon name="add"></ion-icon>&nbsp;回答</button>
+    <button ion-button small><ion-icon name="add"></ion-icon>&nbsp;{{questionInfo?.IsFavourite ? '取消关注' : '关注'}}</button>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+<ion-card *ngFor="let answer of questionInfo?.Answers">
+      <ion-item>
+        <ion-avatar item-start><img src="{{answer.HeadFace}}" alt="图片请求错误"></ion-avatar>
+        <p style="line-height: 30px">
+          {{answer.UserNickName}}
+        </p>
+      </ion-item>
+  <ion-card-content>
+    <p>{{answer.Content}}</p>
+    <p float-end>{{answer.CreateDateTime | date: 'yyyy-MM-dd'}}</p>
+  </ion-card-content>
+</ion-card>

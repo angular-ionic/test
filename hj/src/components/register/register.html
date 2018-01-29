@@ -1,0 +1,28 @@
+<form [formGroup]="formGroup">
+  <ion-list margin>
+    <ion-item>
+      <ion-label floating>手机号码:</ion-label>
+      <ion-input type="number" formControlName="mobile" [(ngModel)]="mobile"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>用户昵称:</ion-label>
+      <ion-input type="text" formControlName="nickname" [(ngModel)]="nickname"></ion-input>
+    </ion-item>
+    <div formGroupName="passwordInfo">
+      <ion-item>
+        <ion-label floating>密码:</ion-label>
+        <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>确认密码:</ion-label>
+        <ion-input type="password" formControlName="passwordConfirm" [(ngModel)]="passwordConfirm"></ion-input>
+      </ion-item>
+    </div>
+  </ion-list>
+</form>
+<div padding>
+  <button ion-button block (click)="onRegister()">注 册</button>
+</div>
+<div padding text-end>
+  <button ion-button outline small (click)="onToLogin()">已有账号? 登录</button>
+</div>

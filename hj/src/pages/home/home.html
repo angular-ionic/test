@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar placeholder="搜索:" animated="true" cancelButtonText="删除" class="searchbar">
+    </ion-searchbar>
+    <ion-icon name="text" class="top_header_message_icon" (click)="onToChatTab()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown"
+                           pullingText="下拉刷新"
+                           refreshingSpinner="circles"
+                           refreshingText="加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <home (presentQuestionPageEmitter)="presentQuestionPage()"
+        [feeds]="feeds"
+        (pushQuestionDetailPageEmitter)="pushQuestionDetailPage($event)"
+  ></home>
+</ion-content>
+

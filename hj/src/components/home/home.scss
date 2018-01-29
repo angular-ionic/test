@@ -1,0 +1,40 @@
+home {
+  .floatMenu {
+    background-color: #fff;
+    color: #999;
+    font-weight: bold;
+    height: 36px;
+  }
+
+  .card {
+    margin-top: 5px;
+    //margin-bottom: 10px;
+    box-shadow: none;
+    ion-avatar {
+      min-width: 20px;
+      min-height: 20px;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .input-wapper, ion-label{
+      margin: 0;
+    }
+    .item-block {
+      min-height: 30px;
+    }
+    .card-content {
+      padding-bottom: 0;
+      h2 {
+        margin-top: 10px;
+      }
+      p {
+        text-indent: 1em;
+      }
+    }
+    ion-note {
+      font-size: 1em;
+    }
+  }
+}

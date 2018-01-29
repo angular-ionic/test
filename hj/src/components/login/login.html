@@ -1,0 +1,18 @@
+<form #myForm="ngForm" novalidate>
+  <ion-list margin inset>
+    <ion-item>
+      <ion-label floating>手机号码:</ion-label>
+      <ion-input type="number" [(ngModel)]="mobile" name="mobile" mobileValidator required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>密码:</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password" required minlength="6" maxlength="10"></ion-input>
+    </ion-item>
+  </ion-list>
+</form>
+<div padding>
+  <button ion-button block (click)="onLoginAction()" [disabled]="!myForm.valid">登 录</button>
+</div>
+<div padding float-end>
+  <button ion-button outline small (click)="pushRegisterAction()">注 册?</button>
+</div>

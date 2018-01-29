@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <register (onRegisterEmitter)="onRegister($event)"
+            (onToLoginEmitter)="onToLogin()"
+  ></register>
+</ion-content>
