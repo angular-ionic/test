@@ -1,0 +1,18 @@
+<div margin-top text-center margin>
+  <ion-list margin-bottom>
+    <button ion-item>
+      <ion-avatar item-start=""><img [src]="headFace" alt="图片加载错误"></ion-avatar>
+      <h3>头像</h3>
+    </button>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>用户昵称: </ion-label>
+      <ion-input type="text" [(ngModel)]="nickname"></ion-input>
+    </ion-item>
+  </ion-list>
+</div>
+<div padding padding-top >
+  <button ion-button block color="primary" (click)="onModifyUserInfo()">保存</button>
+  <button ion-button block color="danger" (click)="onLogout()">注销</button>
+</div>

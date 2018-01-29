@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>more</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content margin-top text-center>
+  <div class="drop"></div>
+  <more (presentLoginEmitter)="presentLogin()"
+        [isLogin]="isLogin"
+        [userInfo]="userInfo"
+        (pushUserPageEmitter)="pushUserPage()"
+  ></more>
+</ion-content>

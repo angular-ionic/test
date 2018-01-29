@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>login</ion-title>
+    <ion-buttons end>
+      <button icon-only ion-button (click)="onDismissAction()">
+        <ion-icon showWhen="android" name="md-close" style="font-size: 20px"></ion-icon>
+        <span ion-text color="primary" showWhen="ios">取消</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content style="padding-top: 20em">
+  <login (pushRegisterEmitter)="pushRegisterAction()"
+         (loginEmitter)="onLoginAction($event)"
+  ></login>
+</ion-content>
